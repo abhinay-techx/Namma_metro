@@ -25,10 +25,9 @@ Before you start, ensure you have the following:
 
 1. Clone the repository:
     
-    ```bash
-    git clone <https://github.com/your-username/namma-metro-fare-calculator.git>
     
-    ```
+    git clone https://github.com/abhinaykumar-47/Namma_metro.git
+    
     
 2. Set up the necessary Python environment and install required packages.
 3. Set up the MySQL database using the provided scripts.
