@@ -26,7 +26,7 @@ Before you start, ensure you have the following:
 1. Clone the repository:
     
     
-    git clone https://github.com/abhinaykumar-47/Namma_metro.git
+    git clone https://github.com/abhinay-kumar47/Namma_metro.git
     
     
 2. Set up the necessary Python environment and install required packages.
@@ -67,7 +67,7 @@ We welcome contributions to enhance and improve the Namma Metro Fair Calculator 
     - Clone your forked repository to your local machine:
         
         
-        git clone https://github.com/abhinaykumar-47/Namma_metro.git
+        git clone https://github.com/abhinay-kumar47/Namma_metro.git
         
         
 3. **Create a Branch:**
