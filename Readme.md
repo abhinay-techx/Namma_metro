@@ -66,40 +66,32 @@ We welcome contributions to enhance and improve the Namma Metro Fair Calculator 
 2. **Clone the Repository:**
     - Clone your forked repository to your local machine:
         
-        ```bash
         
-        git clone https://github.com/your-username/namma-metro-fare-calculator.git
+        git clone https://github.com/abhinaykumar-47/Namma_metro.git
         
-        ```
         
 3. **Create a Branch:**
     - Create a new branch for your feature or bug fix:
         
-        ```bash
         
         git checkout -b feature-name
         
-        ```
         
 4. **Make Changes:**
     - Make your changes or additions to the codebase.
 5. **Commit Changes:**
     - Commit your changes with meaningful commit messages:
         
-        ```bash
         
         git commit -m 'Add feature or bug fix'
         
-        ```
         
 6. **Push Changes:**
     - Push your changes to your forked repository:
         
-        ```bash
         
         git push origin feature-name
         
-        ```
         
 7. **Create a Pull Request:**
     - Open a pull request on the original repository.
@@ -112,7 +104,7 @@ We welcome contributions to enhance and improve the Namma Metro Fair Calculator 
 
 ### License
 
-This project is licensed under the MIT - see the [LICENSE.md](notion://www.notion.so/LICENSE.md) file for details.
+This project is licensed under the MIT - see the [LICENSE.md] file for details.
 
 ### Acknowledgements
 
