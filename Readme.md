@@ -16,7 +16,7 @@ The Namma Metro Fair Calculator Project focuses on the development of an app tha
 
 Before you start, ensure you have the following:
 
-- Python (version X.X.X)
+- Python 
 - MySQL (or any other preferred relational database)
 - VSCode or any preferred code editor
 - Figma (for route map design)
@@ -26,7 +26,7 @@ Before you start, ensure you have the following:
 1. Clone the repository:
     
     
-    git clone https://github.com/abhinay-kumar47/Namma_metro.git
+    git clone https://github.com/abhinay-techx/Namma_metro.git
     
     
 2. Set up the necessary Python environment and install required packages.
@@ -67,7 +67,7 @@ We welcome contributions to enhance and improve the Namma Metro Fair Calculator 
     - Clone your forked repository to your local machine:
         
         
-        git clone https://github.com/abhinay-kumar47/Namma_metro.git
+        git clone https://github.com/abhinay-techx/Namma_metro.git
         
         
 3. **Create a Branch:**
@@ -104,7 +104,7 @@ We welcome contributions to enhance and improve the Namma Metro Fair Calculator 
 
 ### License
 
-This project is licensed under the MIT - see the [LICENSE.md] file for details.
+This project is licensed under the MIT.
 
 ### Acknowledgements
 
