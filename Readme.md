@@ -16,10 +16,10 @@ The Namma Metro Fair Calculator Project focuses on the development of an app tha
 
 Before you start, ensure you have the following:
 
-- Python 
-- MySQL (or any other preferred relational database)
-- VSCode or any preferred code editor
-- Figma (for route map design)
+- Python (or any other preferred programming language)
+- MySQL  (or any other preferred relational database)
+- VSCode (or any preferred code editor )
+- Figma  (for route map design)
 
 ### Installation
 
