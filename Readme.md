@@ -59,48 +59,17 @@ The project uses a relational database to store station and fare information. Pl
 
 ### **Contributing**
 
-We welcome contributions to enhance and improve the Namma Metro Fair Calculator Project. Follow the steps below to contribute:
+Contribute to the Namma Metro Fair Calculator Project by following these steps:
 
-1. **Fork the Repository:**
-    - Click on the "Fork" button at the top right of this repository to create your copy.
-2. **Clone the Repository:**
-    - Clone your forked repository to your local machine:
-        
-        
-        git clone https://github.com/abhinay-techx/Namma_metro.git
-        
-        
-3. **Create a Branch:**
-    - Create a new branch for your feature or bug fix:
-        
-        
-        git checkout -b feature-name
-        
-        
-4. **Make Changes:**
-    - Make your changes or additions to the codebase.
-5. **Commit Changes:**
-    - Commit your changes with meaningful commit messages:
-        
-        
-        git commit -m 'Add feature or bug fix'
-        
-        
-6. **Push Changes:**
-    - Push your changes to your forked repository:
-        
-        
-        git push origin feature-name
-        
-        
-7. **Create a Pull Request:**
-    - Open a pull request on the original repository.
-    - Clearly describe your changes and provide context for your pull request.
-8. **Review and Discuss:**
-    - Participate in discussions related to your pull request.
-    - Make any necessary adjustments based on feedback.
-9. **Merge:**
-    - Once your changes are approved, they will be merged into the main project.
+1. **Fork** the repository.
+2. **Clone** the forked repository to your local machine.
+3. **Create** a new branch for your changes.
+4. **Make** your modifications.
+5. **Commit** your changes with descriptive messages.
+6. **Push** your changes to your forked repository.
+7. **Open** a pull request on the original repository.
+8. **Discuss** and **review** your changes with the community.
+9. Once approved, your changes will be **merged** into the main project.
 
 ### License
 
