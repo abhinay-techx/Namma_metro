@@ -1,20 +1,23 @@
-import imp
+# Importing required libraries
+import importlib
 from tkinter import *
 from tkinter import messagebox
 from tkinter.font import BOLD
 from turtle import back
 from tkinter import ttk
 import mysql.connector
-  
+
+
+# Stations
 
 stations = ['Majestic, Kempegowda Station', 'Mantri Square, Sampige Road', 'Srirampura', 'Mahakavi Kuvempu Road', 'Rajajinagar',
 'Mahalakhsmi' ,'Sandal Soap Factory', 'Yeshwantpur', 'Goraguntepalya' , 'Peenya','Peenya Industry', 'Jalahalli','Dasarahalli',
 'Nagasandra', 'Chikpete', 'Krishna Rajendra Nagar', 'National College', 'Lalbagh', 'South End Circle', 'Jayanagar', 
 'Rashtreeya Vidyalaya Road', 'Banashankari', 'Jaya Prakash Nagar', 'Yelachenahalli', 'Konanakunte Cross', 'Doddakallasandra', 'Vajrahalli',
- 'Thalaghattapura', 'Silk Institute' , 'Sir Viswesaraya Station, Central College', 'Vidhan Soudha','Cubbon Park',
- 'MG Road', 'Trinity', 'Halasuru','Indiranagar', 'Swami Vivekananda Road', 'Baiyappanahalli', 'KSR Railway Station', 'Magadi Road', 'Hosahalli','Vijayanagar', 'Attiguppe',
- 'Gitanjali Nagar', 'Mysore Road','Nayadanahalli', 'Rajarajeshwari',  'Jnanabharathi', 'Pattanagere', 'Kengeri Bus Terminal', 
- 'Kengeri']
+'Thalaghattapura', 'Silk Institute' , 'Sir Viswesaraya Station, Central College', 'Vidhan Soudha','Cubbon Park',
+'MG Road', 'Trinity', 'Halasuru','Indiranagar', 'Swami Vivekananda Road', 'Baiyappanahalli', 'KSR Railway Station', 'Magadi Road', 'Hosahalli','Vijayanagar', 'Attiguppe',
+'Gitanjali Nagar', 'Mysore Road','Nayadanahalli', 'Rajarajeshwari',  'Jnanabharathi', 'Pattanagere', 'Kengeri Bus Terminal', 
+'Kengeri']
 
 g1 = ['Majestic, Kempegowda Station', 'Mantri Square, Sampige Road', 'Srirampura', 'Mahakavi Kuvempu Road', 'Rajajinagar',
 'Mahalakhsmi' ,'Sandal Soap Factory', 'Yeshwantpur', 'Goraguntepalya' , 'Peenya','Peenya Industry', 'Jalahalli','Dasarahalli',
@@ -22,14 +25,15 @@ g1 = ['Majestic, Kempegowda Station', 'Mantri Square, Sampige Road', 'Srirampura
 
 g2 = ['Majestic, Kempegowda Station', 'Chikpete', 'Krishna Rajendra Nagar', 'National College', 'Lalbagh', 'South End Circle', 'Jayanagar', 
 'Rashtreeya Vidyalaya Road', 'Banashankari', 'Jaya Prakash Nagar', 'Yelachenahalli', 'Konanakunte Cross', 'Doddakallasandra', 'Vajrahalli',
- 'Thalaghattapura', 'Silk Institute' ]
+'Thalaghattapura', 'Silk Institute' ]
 
 p1 = ['Majestic, Kempegowda Station', 'Sir Viswesaraya Station, Central College', 'Vidhan Soudha','Cubbon Park',
- 'MG Road', 'Trinity', 'Halasuru','Indiranagar', 'Swami Vivekananda Road', 'Baiyappanahalli']
+    'MG Road', 'Trinity', 'Halasuru','Indiranagar', 'Swami Vivekananda Road', 'Baiyappanahalli']
 
 p2 = ['Majestic, Kempegowda Station', 'KSR Railway Station', 'Magadi Road', 'Hosahalli','Vijayanagar', 'Attiguppe',
- 'Gitanjali Nagar', 'Mysore Road','Nayadanahalli', 'Rajarajeshwari',  'Jnanabharathi', 'Pattanagere', 'Kengeri Bus Terminal', 
- 'Kengeri' ]
+    'Gitanjali Nagar', 'Mysore Road','Nayadanahalli', 'Rajarajeshwari',  'Jnanabharathi', 'Pattanagere', 'Kengeri Bus Terminal', 
+    'Kengeri' ]
+
 print("Green Line 1", g1,"\n")
 print("Green Line 2", g2,"\n")
 
@@ -45,6 +49,9 @@ boarding_list = []
 destination_list = []
 BD = {}
 
+
+
+# Application UI using Tkinter
 window = Tk()
 window.title("Welcome to Namma Metro")
 window.geometry('500x500+300+200')
@@ -54,10 +61,6 @@ window.resizable(False, False)
 
 title1 = Label(window, text = "Namma Metro Fair Calculator",font=('Microsoft yahei UI Light', 25, 'bold'),bg="white", fg="#153462")
 title1.pack(pady = 10)
-
-
-# title = Label(window,text = "Namma Metro Fare Calculator", bg="Purple", fg="White")
-# title.pack(pady = 10)
 
 
 
@@ -74,6 +77,9 @@ drop2 = OptionMenu(window, destination_variable, *stations)
 drop2.place(x=200,y=180)
 drop2.config(bg="#FBFBFB", fg="black", width=20)
 
+
+
+# Connecting with database
 mydb = mysql.connector.connect(
     host = "localhost",
     user = "root",
@@ -89,6 +95,8 @@ mycursor.execute(sql_command,sql_values)
 mydb.commit()
 
 
+
+# Price calculator function
 def priceCalc():
     global boarding_variable, destination_variable, station, g1,g2,p1,p2, lines, route, destination_list,boarding_list, BD, maintainance_list, extraPrice_dict
     new_window = Toplevel()
@@ -115,6 +123,7 @@ def priceCalc():
         stops = 0
         messagebox.showerror('Invalid', "The destination station that you have selected is under maintainance.")
         new_window.destroy()
+
     else:
         mydb = mysql.connector.connect(
             host = "localhost",
@@ -153,7 +162,7 @@ def priceCalc():
         print("Route: ",route,"\n")
         stops = len(route)-1 # excluding boarding station and including destination station
         if stops == 0:
-             price = 0
+            price = 0
         elif stops == 1:
             price = 9
         elif stops == 2:
@@ -195,10 +204,7 @@ def priceCalc():
         my_tree.heading("Station Name", text='Station Name' , anchor=CENTER)
         my_tree.heading("Stage",text='Type' ,anchor=CENTER)
 
-        # Add Data
-        # my_tree.insert(parent='', index='end', iid = 0, text='', values=(0, 'S0', 'Boarding'))
-        # my_tree.insert(parent='', index='end', iid = 1, text='', values=(1, 'S1', ''))
-        # my_tree.insert(parent='', index='end', iid = 2, text='', values=(2, 'S2', ''))
+    
         count = 0
         for x in route:
             if route.index(x) == 0:
@@ -212,7 +218,7 @@ def priceCalc():
         my_tree.pack(pady=10)
         def handle_click(event):
             if my_tree.identify_region(event.x, event.y) == "separator":
-             return "break"
+                return "break"
         my_tree.bind('<Button-1>', handle_click)
         title_pricelabel = Label(new_window, text = "Total Price",font=('Microsoft yahei UI Light', 15,'bold'),bg="#F6F6C9", fg="#153462")
         title_pricelabel.pack()
@@ -226,7 +232,6 @@ def stats():
     stat_window.geometry("500x400")
     stat_window.config(bg="#F6F6C9")
     stat_window.title("Admin Panel")
-  
     
     title_route = Label(stat_window, text = "Admin Panel",font=('Microsoft yahei UI Light', 20,'bold'),bg="#F6F6C9", fg="#153462")
     title_route.pack(pady=20)
@@ -236,7 +241,7 @@ def stats():
         came_stats_window.geometry("500x600")
         came_stats_window.config(bg="#F6F6C9")
         came_stats_window.title("Namma Metro Fair Calculator")
-       
+
         title_route = Label(came_stats_window, text = "Station as Destination",font=('Microsoft yahei UI Light', 20,'bold'),bg="#F6F6C9", fg="#153462")
         title_route.pack(pady=20)
 
@@ -298,7 +303,7 @@ def stats():
         )
         mycursor = mydb.cursor()
         mycursor.execute("select boarding_station, count(*) as count FROM ticket_history GROUP BY boarding_station")
-   
+
         style=ttk.Style()
         style.theme_use('clam')
         style.configure('Treeview', rowheight=30)
@@ -340,8 +345,7 @@ def stats():
         unwindow.geometry("500x600")
         unwindow.config(bg="#F6F6C9")
         unwindow.title("Namma Metro System")
-        # image1 = ImageTk.PhotoImage(Image.open("C:/Users/sukes/Downloads/images.png"))
-        # left_stats_window.iconphoto(False, image1)
+        
         title_route = Label(unwindow, text = "Stations under maintainance",font=('Microsoft yahei UI Light', 20,'bold'),bg="#F6F6C9", fg="#153462")
         title_route.pack(pady=20)
 
@@ -400,6 +404,8 @@ def stats():
         btn.pack(pady=5)
         btn1 = Button(unwindow, width=5, pady = 7, relief="ridge",text = 'remove',bg = '#FFF',background='white',highlightthickness=0, fg = '#153462', border =0, command=remove_maintainance, font=("Microsoft yahei UI Light", 15))
         btn1.pack()
+
+    # Extrafare fuction
     def extraFare():
         global extraPrice_dict, stations
         extraW = Toplevel()
@@ -407,7 +413,7 @@ def stats():
         extraW.config(bg="#F6F6C9")
         extraW.title("Namma Metro System")
         extraW.resizable(False, False)
-     
+
         title_route = Label(extraW, text = "Add or Remove extra are",font=('Microsoft yahei UI Light', 20,'bold'),bg="#F6F6C9", fg="#153462")
         title_route.pack(pady=20)
 
@@ -432,10 +438,6 @@ def stats():
         my_tree.heading("Station Name", text='Station Name' , anchor=CENTER)
         my_tree.heading("Extra Fare", text='Extra Fare' , anchor=W)
 
-        # count = 1
-        # for station_name in maintainance_list:
-        #     my_tree.insert(parent='', index='end', iid = count, text='', values=(station_name))
-        #     count+=1
         my_tree.pack(pady=10)
 
 
@@ -458,7 +460,7 @@ def stats():
         drop2.pack(pady=10)
         drop2.config(bg="#FBFBFB", fg="black", width=1)
 
-
+        # Adding totalfare
         def add_fare():
             global extraPrice_dict
             if extra_fare_variable.get() == "":
@@ -510,5 +512,3 @@ btn2 = Button(window, width=10, height=4,pady = 7, relief="ridge",text = 'Admin 
 btn2.place(x=180, y=340)
 btn3 = Button(window, width=10, pady = 7, relief="ridge",text = 'Back',bg = '#FFF',background='white',highlightthickness=0, fg = '#153462', border =0, command=window.destroy, font=("Microsoft yahei UI Light", 15))
 btn3.place(x=180, y=450)
-
-mainloop()
